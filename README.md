@@ -1,0 +1,2 @@
+# work-tracker-application
+Single Page Application built with Vue.js, Vuetify and deployed with Firebase. This application allows FedEx employees to enter work day statistics and will return calculations based on that data. This data is displayed on the user's profile, on a Vuetify card for each individual day. The calculations include the total pay earned for the day, stops completed each hour, and effective hourly pay, since the employees are paid on commission. The application also calculates the amount of time the employee worked.
