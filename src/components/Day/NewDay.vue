@@ -65,7 +65,6 @@
 										</v-date-picker>
      						 </v-menu>
 
-
 								<v-dialog
 								ref="dialog"
 								v-model="modal"
@@ -91,16 +90,6 @@
 										<v-btn flat color="primary" @click="$refs.dialog.save(startTime)">OK</v-btn>
 									</v-time-picker>
      						 </v-dialog> 									
-
-									<v-text-field
-									name="startMiles"
-									label="Starting Miles"
-									id="startMiles"
-									prepend-icon="place"
-									solo
-									v-model= "startMiles"
-									:rules="[rules.required]">
-									</v-text-field>
 
 									<v-dialog
 								ref="dialog2"
@@ -128,15 +117,6 @@
 									</v-time-picker>
      						 </v-dialog>
 
-									<v-text-field
-									name="endMiles"
-									label="Ending Miles"
-									id="endMiles"
-									prepend-icon="place"
-									solo
-									v-model="endMiles"
-									:rules="[rules.required]">
-									</v-text-field>
 
 									<v-text-field
 									name="totalStops"
@@ -178,14 +158,11 @@ export default {
 				date: null,
 				weekDay:null,
         startTime: null,
-        startMiles: null,
         endTime: null,
-        endMiles: null,
 				totalStops: null,
 				hoursWorked: null,
 				hourlyStops: null,
 				hourlyPay: null,
-				milesDriven: null,
 				payRate: null,
 				displayName: null
       }
@@ -209,8 +186,6 @@ export default {
 				return  this.date != null &&
 									this.startTime != null &&
 									this.endTime != null && 
-									this.startMiles != null && 
-									this.endMiles != null &&
 									this.totalStops != null
 			},
 
@@ -270,10 +245,6 @@ export default {
 			stopsPerHour () { //Calculate stops completed per hour worked
 				return Math.round((this.totalStops  / this.timeWorked ) * 100) / 100
 			},
-
-			totalMiles(){ //calculate total miles driven in the day
-				return this.endMiles - this.startMiles
-			},
 			loadedDays() { //Load all user created days in the loadedDays array and display on profile
         return this.$store.getters.loadedDays
       }
@@ -290,14 +261,11 @@ export default {
 				 date: this.date, 
 				 startTime: this.startTime, 
 				 endTime:this.endTime,
-				 startMiles:this.startMiles, 
-				 endMiles:this.endMiles,
 				 totalStops:this.totalStops, 
 				 hoursWorked: this.timeWorked,
 				 hourlyStops: this.stopsPerHour,
 				 hourlyPay: this.payPerHour,
 				 totalPay: this.totalPay,
-				 milesDriven: this.totalMiles,
 				 creatorId: this.user.id
 			}
 			this.$store.dispatch('addNewDay', newDay) 

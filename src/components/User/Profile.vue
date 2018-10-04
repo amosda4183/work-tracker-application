@@ -37,16 +37,8 @@
                 <v-list-tile-content class="align-end">{{visibleDay.startTime}}</v-list-tile-content>
               </v-list-tile>
               <v-list-tile>
-                <v-list-tile-content>Starting Miles:</v-list-tile-content>
-                <v-list-tile-content class="align-end">{{visibleDay.startMiles}}</v-list-tile-content>
-              </v-list-tile>
-              <v-list-tile>
                 <v-list-tile-content>End Time:</v-list-tile-content>
                 <v-list-tile-content class="align-end">{{visibleDay.endTime}}</v-list-tile-content>
-              </v-list-tile>
-              <v-list-tile>
-                <v-list-tile-content>Ending Miles:</v-list-tile-content>
-                <v-list-tile-content class="align-end">{{visibleDay.endMiles}}</v-list-tile-content>
               </v-list-tile>
               <v-list-tile>
                 <v-list-tile-content>Stops:</v-list-tile-content>
@@ -67,10 +59,6 @@
               <v-list-tile>
                 <v-list-tile-content>Total Pay:</v-list-tile-content>
                 <v-list-tile-content class="align-end">${{visibleDay.totalPay}}</v-list-tile-content>
-              </v-list-tile>
-              <v-list-tile>
-                <v-list-tile-content>Miles Driven:</v-list-tile-content>
-                <v-list-tile-content class="align-end">{{visibleDay.milesDriven}}</v-list-tile-content>
               </v-list-tile>
             </v-list>
           </v-card>
